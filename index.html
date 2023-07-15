@@ -28,6 +28,7 @@
       <li class="list-group-item">Item 4</li>
       <li>Item 5</li>
     </ul>
+    <span></span>
    </div>
   </div>
 
@@ -55,7 +56,47 @@
 
     const liItems = document.querySelectorAll('.list-group-item');
     liItems[1].style.backgroundColor='green';
-    liItems[2].style.visibility ='hidden';
+    //liItems[2].style.visibility ='hidden';
+
+    const itemList = document.querySelector('#items');
+    itemList.parentElement.style.backgroundColor='#f4f4f4';
+
+    console.log(itemList.firstChild);
+    itemList.firstElementChild.textContent='Hello 1';
+
+    console.log(itemList.lastChild);
+    itemList.lastElementChild.textContent='Hello 4';
+
+    console.log(itemList.nextSibling);
+    console.log(itemList.nextElementSibling);
+    itemList.nextElementSibling.innerHTML='<h3>I am span</h3>';
+
+    console.log(itemList.previousSibling);
+    console.log(itemList.previousElementSibling);
+    itemList.previousElementSibling.style.color='magenta';
+
+    const newDiv = document.createElement('Div');
+    newDiv.className='hello';
+    newDiv.id='hello1';
+    newDiv.setAttribute('title','Hello Div');
+    const newDivText = document.createTextNode('Hello World');
+    newDiv.appendChild(newDivText);
+    const container = document.querySelector('header .container');
+    const h1 = document.querySelector('header h1');
+    container.insertBefore(newDiv,h1);
+    newDiv.style.fontSize='30px';
+
+    // const newDiv = document.createElement('li');
+    // newDiv.className='list-group-item';
+    // //newDiv.id='hello1';
+    // //newDiv.setAttribute('title','Hello Div');
+    // const newDivText = document.createTextNode('new Item');
+    // newDiv.appendChild(newDivText);
+    // const ul= document.querySelector('header .list-group');
+    // const li1 = document.querySelector('header listItem.firstElementChild');
+    // ul.insertBefore(newDiv,listItem.firstElementChild);
+    
+
     
   </script>
 </body>
