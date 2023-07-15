@@ -36,6 +36,14 @@
     const items = document.getElementById('add-items');
     items.style.color='green';
     items.style.fontWeight='bold';
+
+    const listItems = document.getElementsByClassName('list-group-item');
+    listItems[2].style.backgroundColor='green';
+
+    for(let a=0;a<listItems.length;a++)
+    {
+        listItems[a].style.fontWeight='bold';
+    }
   </script>
 </body>
 </html>
